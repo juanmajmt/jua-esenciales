@@ -1,0 +1,19 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.log
+[200~wireframe/
+*.zip
+*.rar
+*.7z
+*.xlsx
+*.psd
+*.ai~
+wireframe/
+*.zip
+*.rar
+*.7z
+*.xlsx
+*.psd
+*.ai
+~*
