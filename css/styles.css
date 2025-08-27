@@ -197,6 +197,16 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
+.slider-item {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  object-fit: cover;     
+  aspect-ratio: 1 / 1;    
+}
+
 .slider-item.visible {
   display: block;
 }
@@ -441,8 +451,8 @@ body {
   transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.slider-imagenes .prev { left: 20px; }
-.slider-imagenes .next { right: 20px; }
+.slider-imagenes .prev { left: 30px; }
+.slider-imagenes .next { right: 30px; }
 
 .slider-imagenes .prev:hover,
 .slider-imagenes .next:hover {
@@ -451,131 +461,49 @@ body {
 }
 
 /* --- Responsive --- */
-/* Móviles */
-@media (max-width: 599px) {
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
+/* Mobile */
+@media (max-width: 767px) {
+  body { font-size: 14px; padding: 10px; }
 
-  .navbar-logo img {
-    height: 90px;
-  }
+  .navbar-logo img { height: 90px; }
+  .navbar-menu { flex-direction: column; gap: 15px; margin-top: 15px; }
 
-  .navbar-menu {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
-  }
+  .inicio { grid-template-columns: 1fr; text-align: center; gap: 20px; padding: 20px; }
+  .inicio .texto-intro { max-width: 100%; font-size: 1em; }
+  .inicio .imagen-intro img { max-width: 280px; margin-top: 20px; }
 
-  .inicio {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 20px;
-    padding: 20px;
+  .seccion-nosotros { 
+    grid-template-columns: 1fr; 
+    align-items: center; 
   }
+  .imagenes-nosotros { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .imagenes-nosotros img:last-child { grid-column: span 2; max-width: 90%; justify-self: center; }
 
-  .inicio .texto-intro {
-    max-width: 100%;
-    text-align: center;
-    font-size: 1em;
-  }
+  .seccion-contacto-completa { display: flex; flex-direction: column; gap: 30px; align-items: center; }
+  .contacto-info, .contacto-formulario { width: 100%; max-width: 400px; }
+  .contacto-info { order: 1; }
+  .contacto-formulario { order: 2; }
 
-  .inicio .imagen-intro img {
-    max-width: 280px;
-    margin-top: 20px;
-  }
+  .slider-imagenes { max-width: 420px; }
+  .slider-imagenes .prev { font-size: 1.5em; padding: 6px 10px; left: -30px; }
+  .slider-imagenes .next { font-size: 1.5em; padding: 6px 10px; right: -30px; }
 
-  .seccion-nosotros {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .imagenes-nosotros {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .imagenes-nosotros img:last-child {
-    grid-column: span 2;
-    max-width: 90%;
-    justify-self: center;
-  }
-
-  .seccion-contacto-completa {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .contacto-info,
-  .contacto-formulario {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .contacto-info {
-    order: 1;
-  }
-
-  .contacto-formulario {
-    order: 2;
-  }
-
-  .slider-imagenes {
-    max-width: 420px; 
-  }
-
-  .slider-imagenes .prev,
-  .slider-imagenes .next {
-    font-size: 1.5em;
-    padding: 6px 10px;
-    left: -30px;
-    right: -30px;
-  }
+  /* Pedido: 1 producto por fila */
+  .productos-pedido { grid-template-columns: 1fr; }
 }
 
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .productos-pedido { grid-template-columns: repeat(2, 1fr); }
+}
 
-/* Escritorios */
+/* Desktop */
 @media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-    padding: 30px;
-  }
+  body { font-size: 18px; padding: 30px; }
 
-  .inicio {
-    flex-direction: row;
-    gap: 40px;
-  }
+  .inicio { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .inicio .texto-intro { max-width: 600px; }
 
-  .inicio .texto-intro {
-    max-width: 600px;
-  }
-
-  .imagenes-nosotros {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .imagenes-nosotros img:last-child {
-    grid-column: span 2;
-  }
+  .imagenes-nosotros { grid-template-columns: repeat(2, 1fr); }
+  .imagenes-nosotros img:last-child { grid-column: span 2; }
 }
-
-/* Responsive pedido */
-/* Tablets */
-@media (max-width: 1023px) {
-  .productos-pedido {
-    grid-template-columns: repeat(2, 1fr); /* 2 productos por fila */
-  }
-}
-
-/* Móviles */
-@media (max-width: 599px) {
-  .productos-pedido {
-    grid-template-columns: 1fr; /* 1 producto por fila */
-  }
-}
-
-
-
