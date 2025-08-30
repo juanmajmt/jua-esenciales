@@ -1,0 +1,41 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'extends';
+
+.seccion-pedido{
+  background:$fondo-grad-1;
+  padding: $space-4 $space-2;
+  text-align:center;
+
+
+  .container { }
+
+  h2{
+    font-family:$font-script;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    margin-bottom:$space-3;
+  }
+
+  .productos-pedido{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:$space-3;
+    justify-items:center;
+
+    @media (max-width:1023px){ grid-template-columns: repeat(2,1fr); }
+    @media (max-width:767px){ grid-template-columns: 1fr; }
+  }
+
+  .producto{
+    @extend %card-base;
+    width:100%;
+    max-width: 280px;
+    border:2px solid $rosa;
+    text-align:center;
+
+    h3{ color:$rosa-oscuro; margin-bottom: .5rem; }
+    .precio{ font-weight:700; margin-bottom:.75rem; }
+    select, input[type="number"]{ width:100%; padding:.6rem; border:1px solid #ccc; border-radius:8px; }
+    button{ @include btn($lila, $lila-oscuro); margin-top:.75rem; }
+  }
+}

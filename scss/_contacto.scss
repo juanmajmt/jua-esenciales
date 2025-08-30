@@ -1,0 +1,27 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.seccion-contacto-completa{
+  background:$fondo-grad-1; padding: $space-4 $space-2;
+  .container{ display:grid; grid-template-columns: 1fr 1fr; gap: $space-4; }
+  .contacto-info{
+    display:flex; flex-direction:column; gap:.8rem;
+    h3{ margin:0 0 .4rem; }
+    p{ display:flex; align-items:center; gap:.6rem;
+      i{ color:$rosa-oscuro; } &:hover i{ color:$lila; }
+    }
+  }
+  .contacto-formulario{
+    h3{ margin:0 0 .6rem; }
+    form{ display:flex; flex-direction:column; gap:.75rem; }
+    input, textarea{
+      padding:.65rem .75rem; border-radius:8px; border:1px solid #ccc; font: inherit;
+      @include smooth(border-color .2s, box-shadow .2s);
+      &:focus{ border-color:$rosa; box-shadow: 0 0 0 3px rgba(240,100,170,.25); outline: none; }
+    }
+    button{ @include btn($lila, $lila-oscuro); }
+  }
+  @media (max-width: 767px){
+    .container{ grid-template-columns: 1fr; }
+  }
+}

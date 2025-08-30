@@ -1,19 +1,20 @@
-# Archivos del sistema
+# Node
+node_modules/
+.sass-cache/
+
+# Sistema
 .DS_Store
 Thumbs.db
 *.log
-[200~wireframe/
-*.zip
-*.rar
-*.7z
-*.xlsx
-*.psd
-*.ai~
-wireframe/
+
+# Archivos de diseño
 *.zip
 *.rar
 *.7z
 *.xlsx
 *.psd
 *.ai
-~*
+
+# Carpeta de wireframes
+wireframe/
+

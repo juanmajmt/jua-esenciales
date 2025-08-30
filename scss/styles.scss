@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'mixins'     as *;
+@use 'extends';
+@use 'utilities';
+
+@use 'navbar';
+@use 'footer';
+
+@use 'inicio';
+@use 'nosotros';
+@use 'catalogo';
+@use 'contacto';
+@use 'pedido';
+
+/* ===== Base y layout global ===== */
+html, body { height: 100%; }
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $bg-page;   
+  color: $negro;
+  font-family: $font-base;
+  line-height: 1.6;
+}
+
+main{ flex: 1 0 auto; }  

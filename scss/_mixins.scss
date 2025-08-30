@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+@mixin mq-mobile   { @media (max-width: #{$bp-mobile}) { @content; } }
+@mixin mq-tablet   { @media (min-width: 768px) and (max-width: #{$bp-tablet}) { @content; } }
+@mixin mq-desktop  { @media (min-width: #{$bp-desktop}) { @content; } }
+
+@mixin btn($bg, $bg-hover: darken($bg, 8%), $color: $blanco) {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: $radius;
+  background-color: $bg;
+  color: $color;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .25s, transform .15s;
+  &:hover { background-color: $bg-hover; transform: translateY(-1px); }
+}
+
+@mixin card($bg: $blanco) {
+  background: $bg;
+  border-radius: $radius;
+  box-shadow: $shadow-1;
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex; align-items: center; justify-content: center; gap: $gap;
+}
+
+@mixin smooth($props: all, $dur: .3s, $tf: ease){
+  transition: $props $dur $tf;
+}
+@mixin focus-ring {
+  outline: 2px solid rgba(0,0,0,.1);
+  box-shadow: 0 0 0 3px rgba(236,21,128,.25);
+}
+@mixin motion-safe { @media (prefers-reduced-motion: no-preference){ @content; } }

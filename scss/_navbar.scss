@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+html, body { margin: 0; padding: 0; } // elimina márgenes por defecto
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: $rosa;                    // rosa sólido
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.navbar .container{
+  max-width: 1200px;
+  margin-inline: auto;
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.navbar-logo img{ height: 44px; width: auto; display: block; }
+
+.navbar-menu{
+  display:flex; gap: 24px; list-style:none; margin:0; padding:0;
+}
+.navbar-menu a{
+  color: #fff; font-weight: 600; text-decoration:none;
+  padding-bottom: 2px; border-bottom: 2px solid transparent;
+}
+.navbar-menu a.active{ border-bottom-color:#fff; }
+
+
+ 

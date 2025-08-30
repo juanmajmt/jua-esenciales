@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arma tu Pedido - JUA Esenciales</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Armá tu pedido - JUA Esenciales</title>
+  <link rel="icon" href="../assets/img/logobyn.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
 </head>
 <body>
-  <header class="navbar">
-    <img src="../assets/img/logobyn.png" alt="Logo JUA" class="navbar-logo">
-    <ul class="navbar-menu">
-      <li><a href="../index.html">INICIO</a></li>
-      <li><a href="nosotros.html">NOSOTROS</a></li>
-      <li><a href="catalogo.html">CATÁLOGO</a></li>
-      <li><a href="pedido.html" class="active">ARMA TU PEDIDO</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
-    </ul>
-  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-logo" href="../index.html">
+        <img src="../assets/img/logo.png" alt="JUA Esenciales">
+      </a>
+
+      <ul class="navbar-menu">
+        <li><a href="../index.html">INICIO</a></li>
+        <li><a href="./nosotros.html">NOSOTROS</a></li>
+        <li><a href="./catalogo.html">CATÁLOGO</a></li>
+        <li><a href="./pedido.html" class="active">ARMA TU PEDIDO</a></li>
+        <li><a href="./contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <h1 class="titulo-principal">ARMÁ TU PEDIDO</h1>
 
@@ -549,7 +558,7 @@
 
     </div>
 
-    <!-- Carrito -->
+   <!-- Carrito -->
     <aside class="resumen-pedido">
       <h2>Tu Pedido</h2>
       <ul id="lista-pedido"></ul>
@@ -564,6 +573,7 @@
     <img src="../assets/img/logobyn.png" alt="Logo JUA" class="footer-logo">
     <p>Desde el Alto Valle para todo el país. Gracias por elegir productos hechos con amor.</p>
   </footer>
+
   <script src="../js/pedido.js"></script>
 </body>
 </html>

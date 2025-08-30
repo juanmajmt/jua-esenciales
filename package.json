@@ -1,0 +1,25 @@
+{
+  "name": "desarrollo-web-jua",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --no-source-map --style=expanded scss/styles.scss css/styles.css",
+    "sass:watch": "sass --watch scss/styles.scss css/styles.css",
+    "build": "sass --style=compressed scss/styles.scss css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.91.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmajmt/jua-esenciales.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanmajmt/jua-esenciales/issues"
+  },
+  "homepage": "https://github.com/juanmajmt/jua-esenciales#readme"
+}

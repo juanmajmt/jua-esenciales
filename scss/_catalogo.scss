@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+.seccion-catalogo{
+  padding: 2.5rem 1rem;
+  background: $fondo-grad-1;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+.seccion-catalogo .container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.slider-catalogo{
+  position:relative; width:min(100%, 720px); padding: $space-3 0;
+  display:flex; justify-content:center; align-items:center;
+}
+
+.slider-imagenes{
+  width:100%; max-width: 1000px; overflow:hidden; position:relative;
+  .slider-item{
+    display:none; width:100%; aspect-ratio: 4/3; object-fit: contain;
+    border-radius: 15px; box-shadow: $shadow-2;
+    opacity:0; transform: scale(.985);
+    @include smooth(opacity .35s, transform .35s);
+    &.visible{ display:block; opacity:1; transform: none; }
+  }
+}
+
+.slider-btn{ // si tus flechas tienen esta clase
+  position:absolute; top:50%; transform:translateY(-50%); z-index: 2;
+  background: radial-gradient(circle, #ff7eb9, $rosa-oscuro); color:$blanco; border:0;
+  font-size: 2.2rem; padding:.5rem .8rem; border-radius: 50%;
+  cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,.25);
+  @include smooth(transform .2s, background .3s);
+  &:hover{ transform: translateY(-50%) scale(1.06); background: radial-gradient(circle, #fbaed2, $rosa); }
+  &:focus-visible{ @include focus-ring; }
+  &.prev{ left: .5rem; } &.next{ right: .5rem; }
+  @media (max-width: 767px){ font-size: 1.6rem; &.prev{ left:-.8rem;} &.next{ right:-.8rem; } }
+}
