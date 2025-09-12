@@ -1,9 +1,9 @@
 @use 'variables' as *;
 
 .inicio{
-  min-height: calc(100vh - 160px);  
+  min-height: 0;  
   padding-top: 60px;
-  padding-bottom: 40px;
+  padding-bottom: 12px;
   display: grid;
   place-content: start center;
   position: relative;
@@ -48,6 +48,90 @@
   }
 
   @media (max-width: 1023px){
-    .hero-wrapper{ grid-template-columns: 1fr; gap: 20px; }
+    .hero-wrapper{ 
+      grid-template-columns: 1fr; gap: 20px;
+      margin: 16px auto 8px;
+     }
+  }
+
+.productos-destacados {
+  padding: 56px 20px 64px;
+  text-align: center;
+
+  .titulo-seccion {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+    color: $rosa-oscuro;
+    margin: 0 0 28px;
+  }
+
+  .grid-destacados {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 560px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card-prod {
+    background: $blanco;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+    padding: 16px 16px 18px;
+    transition: transform .25s, box-shadow .25s;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .12);
+    }
+
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-family: "Quicksand", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.05rem, 1.1vw, 1.2rem);
+      color: $rosa;
+      margin: 6px 0 12px;
+    }
+
+    .btn-ver {
+      display: inline-block;
+      background: $lila;
+      color: $blanco;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: background .25s, transform .15s;
+      line-height: 1;
+
+      &:hover {
+        background: $lila-oscuro;
+        transform: translateY(-1px);
+      }
+    }
   }
 }
+
+  
+}
+
+

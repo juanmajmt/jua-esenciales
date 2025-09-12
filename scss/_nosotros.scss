@@ -1,20 +1,68 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+.titulo-principal{
+  font-family: $font-script;                
+  color: $rosa-oscuro;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  letter-spacing: .3px;
+  margin: 14px auto 8px;
+  max-width: 1200px;
+  padding: 0 16px;
+}
+
 .seccion-nosotros{
-  display:grid; grid-template-columns:1fr 1fr; gap:40px; padding:50px; align-items:start; background:$fondo-grad-1;
-  .imagenes-nosotros{
-    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:20px;
-    img{
-      width:100%; border-radius:12px; object-fit:cover; box-shadow:$shadow-1; transition:transform .3s, box-shadow .3s;
-      &:hover{ transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,.25); }
-      &:nth-child(1), &:nth-child(2){ max-height:220px; }
-      &:nth-child(3){ grid-column:1/3; max-height:300px; }
-    }
+  max-width: 1200px;
+  margin: 18px auto 64px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;       
+  gap: 28px;
+  align-items: start;
+}
+
+.imagenes-nosotros{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "a b"
+    "c c";
+  gap: 16px;
+}
+
+.imagenes-nosotros img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.10);
+  display: block;
+}
+.imagenes-nosotros img:nth-child(1){ grid-area: a; }
+.imagenes-nosotros img:nth-child(2){ grid-area: b; }
+.imagenes-nosotros img:nth-child(3){
+  grid-area: c;
+  height: 300px;                          
+}
+
+.texto-nosotros{
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #2b2b2b;
+}
+.texto-nosotros h2{
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: $rosa-oscuro;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .seccion-nosotros{
+    grid-template-columns: 1fr;           
+    gap: 22px;
   }
-  .texto-nosotros{ font-size:1.1em; line-height:1.8; max-width:600px; margin:auto; }
-  @include mq-mobile{
-    display:flex; flex-direction:column; align-items:center;
-    .imagenes-nosotros{ grid-template-columns:1fr 1fr; gap:10px; img:last-child{ grid-column:span 2; max-width:90%; justify-self:center; } }
-  }
+  .imagenes-nosotros img{ height: 200px; }
+  .imagenes-nosotros img:nth-child(3){ height: 240px; }
 }

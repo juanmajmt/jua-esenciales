@@ -1,13 +1,13 @@
 @use 'variables' as *;
 
-html, body { margin: 0; padding: 0; } // elimina márgenes por defecto
+html, body { margin: 0; padding: 0; } 
 
 .navbar{
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: $rosa;                    // rosa sólido
+  background: $rosa;                    
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
 

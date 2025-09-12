@@ -2,7 +2,7 @@
 @use 'variables' as *;
 
 .container {
-  width: min(1200px, 92vw);
+  width: min($container, 92vw);
   margin-inline: auto;
 }
 
@@ -11,7 +11,7 @@
   clip: rect(0,0,0,0); white-space: nowrap; border:0;
 }
 
-html { font-size: 16px; } /* base clara */
+html { font-size: 16px; } 
 body { font-family: $font-base; line-height: 1.6; color: $negro; }
 
 .h1-like { font-family: $font-script; font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
